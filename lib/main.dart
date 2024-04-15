@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shoppingcart/components/shoppingcart_detail.dart';
+import 'package:flutter_shoppingcart/components/shoppingcart_header.dart';
+import 'package:flutter_shoppingcart/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,6 +11,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      theme: theme(),
+      home: ShoppingCartPage(),
+    );
+  }
+}
+class ShoppingCartPage extends StatelessWidget {
+  const ShoppingCartPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: _buildShoppingCartAppBar(),
+      body: Column(
+        children: [
+          ShoppingCartHeader(),
+          ShoppingCartDetail(), // Extended 위젯 필요시 사용.
+        ],
+      ),
+    );
+  }
+  AppBar _buildShoppingCartAppBar() {
+    return AppBar();
   }
 }
