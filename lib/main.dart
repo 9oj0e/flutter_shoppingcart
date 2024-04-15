@@ -6,6 +6,7 @@ import 'package:flutter_shoppingcart/theme.dart';
 void main() {
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class ShoppingCartPage extends StatelessWidget {
   const ShoppingCartPage({super.key});
 
@@ -32,7 +34,21 @@ class ShoppingCartPage extends StatelessWidget {
       ),
     );
   }
+
   AppBar _buildShoppingCartAppBar() {
-    return AppBar();
+    return AppBar(
+      leading: IconButton(
+        onPressed: () {},
+        icon: Icon(Icons.arrow_back),
+      ),
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.shopping_cart),
+        ),
+        SizedBox(width: 16),
+      ],
+      elevation: 0.0,
+    );
   }
 }
